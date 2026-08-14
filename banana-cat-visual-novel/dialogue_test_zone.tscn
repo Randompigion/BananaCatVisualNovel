@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://1w5fb83pve2q"]
+
+[ext_resource type="Script" uid="uid://cepb4d8kkt2j3" path="res://dialogue_test_zone.gd" id="1_k6fq2"]
+[ext_resource type="PackedScene" uid="uid://deskl1bunme7a" path="res://TextEngine.tscn" id="2_rqd8t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fdiyd"]
+line_spacing = 3.085
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="DialogueTestZone" type="Node2D" unique_id=902548612]
+script = ExtResource("1_k6fq2")
+
+[node name="Textbox" parent="." unique_id=1270289508 instance=ExtResource("2_rqd8t")]
+custom_minimum_size = Vector2(1, 1)
+offset_left = -55.555584
+offset_top = 43.75002
+offset_right = 1097.4445
+offset_bottom = 2510.75
+label_settings = SubResource("LabelSettings_fdiyd")
+
+[connection signal="start" from="." to="Textbox" method="_on_dialogue_test_zone_start"]
+[connection signal="finished" from="Textbox" to="." method="_on_textbox_finished"]
+[connection signal="tree_exited" from="Textbox" to="." method="_on_textbox_tree_exited"]

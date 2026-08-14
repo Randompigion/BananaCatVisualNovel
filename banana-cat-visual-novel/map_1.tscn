@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bsr7usetf4ye"]
+
+[ext_resource type="Script" uid="uid://kaqas1py2mtr" path="res://tutorial_wrong.gd" id="1_n2bu5"]
+[ext_resource type="Texture2D" uid="uid://dvw3vfsspsftr" path="res://Assets/Maps/CroissantMap.png" id="2_fpksy"]
+[ext_resource type="Texture2D" uid="uid://bqr0kpifas00d" path="res://Assets/Cursor.png" id="3_bhpv2"]
+[ext_resource type="Script" uid="uid://cdp7yjtnevhsp" path="res://cursor.gd" id="4_avvnj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pc3i1"]
+radius = 54.91812
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc3i1"]
+size = Vector2(7422, 198)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3b47u"]
+size = Vector2(406, 4465)
+
+[node name="Map1" type="Node2D" unique_id=837563267]
+script = ExtResource("1_n2bu5")
+
+[node name="Image" type="Sprite2D" parent="." unique_id=1640467339]
+position = Vector2(-1726, -1293)
+scale = Vector2(2, 2)
+texture = ExtResource("2_fpksy")
+
+[node name="Cursor" type="Sprite2D" parent="." unique_id=1539383932]
+texture = ExtResource("3_bhpv2")
+script = ExtResource("4_avvnj")
+
+[node name="Camera2D" type="Camera2D" parent="Cursor" unique_id=1560475641]
+zoom = Vector2(1.5, 1.5)
+
+[node name="ColorRect" type="ColorRect" parent="Cursor/Camera2D" unique_id=194200438]
+z_index = -5
+offset_left = -779.0
+offset_top = -366.0
+offset_right = 819.0
+offset_bottom = 406.0
+color = Color(0.28235295, 0.4862745, 0.27450982, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Cursor" unique_id=798608227]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor/Area2D" unique_id=698792655]
+shape = SubResource("CircleShape2D_pc3i1")
+
+[node name="RightSpot" type="Area2D" parent="." unique_id=801204249]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightSpot" unique_id=1854640035]
+position = Vector2(428, -38)
+polygon = PackedVector2Array(-408, 672, -306, 454, 343, 465, 377, 648)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1127564761]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=566624210]
+position = Vector2(-1724, 1543)
+shape = SubResource("RectangleShape2D_pc3i1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1175120424]
+position = Vector2(-1736.5, -4049)
+shape = SubResource("RectangleShape2D_pc3i1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D" unique_id=1699404901]
+position = Vector2(1753, -1316)
+shape = SubResource("RectangleShape2D_3b47u")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D" unique_id=676180610]
+position = Vector2(-5099, -1246)
+shape = SubResource("RectangleShape2D_3b47u")
+
+[connection signal="startcursor" from="." to="Cursor" method="_on_tutorial_wrong_startcursor"]
+[connection signal="area_entered" from="Cursor/Area2D" to="Cursor" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="RightSpot" to="Cursor" method="_on_right_spot_area_entered"]
+[connection signal="area_entered" from="Area2D" to="Cursor" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Cursor" method="_on_area_2d_body_entered"]

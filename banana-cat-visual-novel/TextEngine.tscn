@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://deskl1bunme7a"]
+
+[ext_resource type="Script" uid="uid://o1kh6qfwio43" path="res://textbox.gd" id="1_jdw4g"]
+[ext_resource type="Texture2D" uid="uid://dtflfuydw7dkk" path="res://Assets/Textbox.png" id="2_knhoa"]
+[ext_resource type="Texture2D" uid="uid://domw70im4jkc2" path="res://Assets/Llama/Llama.png" id="3_k16lp"]
+[ext_resource type="Texture2D" uid="uid://bgint3b3a34k8" path="res://Assets/CatBanana/CatBanana Despair.png" id="3_opskc"]
+[ext_resource type="Texture2D" uid="uid://c32yadghtg5jv" path="res://Assets/CatBanana/CatBanana disgust.png" id="4_cmkqr"]
+[ext_resource type="Texture2D" uid="uid://dwxhgxiffsshb" path="res://Assets/CatBanana/CatBanana Insane.png" id="5_qfxu7"]
+[ext_resource type="Texture2D" uid="uid://d3283fjutfke5" path="res://Assets/CatBanana/CatBanana normal.png" id="6_qnb8h"]
+[ext_resource type="Texture2D" uid="uid://cedeg2mbq4t6c" path="res://Assets/CatBanana/CatBananaTears.png" id="7_5vnrd"]
+[ext_resource type="Texture2D" uid="uid://bw2s7imtnaowa" path="res://Assets/Jail.png" id="8_knhoa"]
+[ext_resource type="Texture2D" uid="uid://ddb8634x5tqmd" path="res://Assets/Llama/Llama2.png" id="9_5djpe"]
+[ext_resource type="Texture2D" uid="uid://q10a55pyp5bc" path="res://Assets/Llama/LlamaConfused.png" id="10_ty1uv"]
+[ext_resource type="Texture2D" uid="uid://ddii17lfwqytj" path="res://Assets/Llama/LLamaCry.png" id="11_djfok"]
+[ext_resource type="Texture2D" uid="uid://c7d3lk0r7iuwo" path="res://Assets/Llama/LlamaFear.png" id="12_vjrt0"]
+[ext_resource type="Texture2D" uid="uid://6avba6rpht0a" path="res://Assets/Llama/LlamaFear2.png" id="13_es253"]
+[ext_resource type="Texture2D" uid="uid://mdrn6roh25kw" path="res://Assets/Llama/LlamaGuilt.png" id="14_06ayl"]
+[ext_resource type="Texture2D" uid="uid://dophi7v6n14lc" path="res://Assets/Llama/LlamaPoint.png" id="15_fol7t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k6fq2"]
+font_size = 24
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pc3i1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qnb8h")
+}],
+"loop": 0,
+"name": &"catBanana",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5vnrd")
+}],
+"loop": 0,
+"name": &"catBananaCry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_opskc")
+}],
+"loop": 0,
+"name": &"catBananaDespair",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cmkqr")
+}],
+"loop": 0,
+"name": &"catBananaDisgust",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qfxu7")
+}],
+"loop": 0,
+"name": &"catBananaInsane",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5djpe")
+}],
+"loop": 0,
+"name": &"llama",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ty1uv")
+}],
+"loop": 0,
+"name": &"llamaConfused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_djfok")
+}],
+"loop": 0,
+"name": &"llamaCry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_vjrt0")
+}],
+"loop": 0,
+"name": &"llamaDisgust",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_es253")
+}],
+"loop": 0,
+"name": &"llamaFear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_06ayl")
+}],
+"loop": 0,
+"name": &"llamaGuilt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_fol7t")
+}],
+"loop": 0,
+"name": &"llamaPoint",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"null",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k16lp")
+}],
+"loop": 0,
+"name": &"randomLlama",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k16lp"]
+font_size = 29
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3b47u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_knhoa")
+}],
+"loop": 1,
+"name": &"Jail",
+"speed": 5.0
+}]
+
+[node name="Textbox" type="Label" unique_id=1270289508]
+offset_left = -1.0
+offset_right = 1152.0
+offset_bottom = 128.0
+text = "This is a sample text! Yeah! Keeping this longer lets me keep track of how much words will fit and format! Gotta loop it now. This is a sample text! Yeah! Keeping this longer lets me keep track of how much words will fit and format! Gotta loop it now. This is a sample text! Yeah! Keeping this longer lets me keep track of how much words will fit and format! Gotta loop it now. This is a sample text! Yeah! Keeping this longer lets me keep track of how much words will fit a"
+label_settings = SubResource("LabelSettings_k6fq2")
+autowrap_mode = 2
+script = ExtResource("1_jdw4g")
+
+[node name="BoxSprite" type="Sprite2D" parent="." unique_id=1889875624]
+z_index = -1
+position = Vector2(571.33997, 18.500008)
+scale = Vector2(0.7, 0.542)
+texture = ExtResource("2_knhoa")
+
+[node name="Delay" type="Timer" parent="." unique_id=827741417]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 0.2
+one_shot = true
+
+[node name="CharSprites" type="AnimatedSprite2D" parent="." unique_id=1468170876]
+unique_name_in_owner = true
+z_index = -2
+position = Vector2(211, -255)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_pc3i1")
+animation = &"llama"
+
+[node name="Name" type="Label" parent="." unique_id=799731865]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = -96.0
+offset_right = 351.0
+offset_bottom = -13.0
+text = "Cat Banana
+"
+label_settings = SubResource("LabelSettings_k16lp")
+
+[node name="Background" type="AnimatedSprite2D" parent="." unique_id=1037102239]
+unique_name_in_owner = true
+z_index = -999
+position = Vector2(672, -216.00002)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_3b47u")
+animation = &"Jail"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=138619174]
+position = Vector2(665, -224)
+scale = Vector2(1.2, 1.2)
+zoom = Vector2(0.84, 0.84)
+
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]

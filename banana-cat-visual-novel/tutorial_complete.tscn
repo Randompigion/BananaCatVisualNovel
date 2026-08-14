@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://jss5cndifuxo"]
+
+[ext_resource type="PackedScene" uid="uid://deskl1bunme7a" path="res://TextEngine.tscn" id="1_5st62"]
+[ext_resource type="Script" uid="uid://udsllhi00h5v" path="res://tutorial_complete.gd" id="1_5y0rg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_of35b"]
+line_spacing = 3.085
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Tutorial Complete" type="Node2D" unique_id=237561113]
+script = ExtResource("1_5y0rg")
+
+[node name="Textbox" parent="." unique_id=1270289508 instance=ExtResource("1_5st62")]
+custom_minimum_size = Vector2(1, 1)
+offset_left = -55.555584
+offset_top = 43.75002
+offset_right = 1097.4445
+offset_bottom = 2510.75
+label_settings = SubResource("LabelSettings_of35b")

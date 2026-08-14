@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://p2elbaxsarbg"]
+
+[ext_resource type="Script" uid="uid://kaqas1py2mtr" path="res://tutorial_wrong.gd" id="1_niae4"]
+[ext_resource type="Texture2D" uid="uid://3k6nquymmcno" path="res://Assets/WhatsWrongs/Tutorial.png" id="1_yavfy"]
+[ext_resource type="Texture2D" uid="uid://bqr0kpifas00d" path="res://Assets/Cursor.png" id="2_xlmko"]
+[ext_resource type="Script" uid="uid://cdp7yjtnevhsp" path="res://cursor.gd" id="3_niae4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pc3i1"]
+radius = 54.91812
+
+[node name="TutorialWrong" type="Node2D" unique_id=837563267]
+script = ExtResource("1_niae4")
+
+[node name="Image" type="Sprite2D" parent="." unique_id=1640467339]
+position = Vector2(828, 532)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_yavfy")
+
+[node name="Cursor" type="Sprite2D" parent="." unique_id=1539383932]
+texture = ExtResource("2_xlmko")
+script = ExtResource("3_niae4")
+
+[node name="Camera2D" type="Camera2D" parent="Cursor" unique_id=1560475641]
+zoom = Vector2(1.5, 1.5)
+
+[node name="ColorRect" type="ColorRect" parent="Cursor/Camera2D" unique_id=194200438]
+z_index = -5
+offset_left = -779.0
+offset_top = -366.0
+offset_right = 819.0
+offset_bottom = 406.0
+color = Color(0.96368665, 0.9238385, 0.5036889, 1)
+
+[node name="Area2D" type="Area2D" parent="Cursor" unique_id=798608227]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor/Area2D" unique_id=698792655]
+shape = SubResource("CircleShape2D_pc3i1")
+
+[node name="RightSpot" type="Area2D" parent="." unique_id=801204249]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightSpot" unique_id=1854640035]
+position = Vector2(786, 759)
+polygon = PackedVector2Array(-408, 672, -376, 412, 98, 277, 130, 616)
+
+[connection signal="startcursor" from="." to="Cursor" method="_on_tutorial_wrong_startcursor"]
+[connection signal="area_entered" from="RightSpot" to="Cursor" method="_on_right_spot_area_entered"]
