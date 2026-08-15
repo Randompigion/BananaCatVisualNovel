@@ -1,4 +1,4 @@
-extends Sprite2D
+extends CharacterBody2D
 var target_position
 var mouse_down = false
 var start = false
@@ -22,8 +22,9 @@ func _process(delta: float) -> void:
 
 
 func _on_right_spot_area_entered(area: Area2D) -> void:
-	if mouse_down:
+	if mouse_down or Input.is_action_pressed("HideDialouge"):
 		#This needs to change, placeholder
+		print("IT SHOULD WORK???")
 		get_tree().change_scene_to_file("res://tutorial_complete.tscn")
 
 
@@ -31,7 +32,6 @@ func _on_tutorial_wrong_startcursor() -> void:
 	start = true
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("entered")
+func _on_kill_zone_body_entered(body: Node2D) -> void:
 	position.x = 0
 	position.y = 0

@@ -16,6 +16,9 @@ signal pause
 signal finished
 var canwork = false
 
+func _ready() -> void:
+	$TextCamera.make_current()
+
 #Whenever you want to start a dialouge, you need to give it these parameters. Its explained in DialougeTestZone.tscn
 func newDialouge(Text,Speaker,Sprite):
 	dialogue_text = (Text)

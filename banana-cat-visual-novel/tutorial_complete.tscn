@@ -17,3 +17,5 @@ offset_top = 43.75002
 offset_right = 1097.4445
 offset_bottom = 2510.75
 label_settings = SubResource("LabelSettings_of35b")
+
+[connection signal="finished" from="Textbox" to="." method="_on_textbox_finished"]

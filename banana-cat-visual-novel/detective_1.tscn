@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://cnb5dyu3avesp"]
+
+[ext_resource type="Texture2D" uid="uid://bacgjj5hqjqt4" path="res://Assets/Scenes/CookieMurder.png" id="1_8dhwa"]
+[ext_resource type="Script" uid="uid://dcljxb7hk57rp" path="res://detective_1.gd" id="1_wtn8n"]
+[ext_resource type="Texture2D" uid="uid://q10a55pyp5bc" path="res://Assets/Llama/LlamaConfused.png" id="2_qbcut"]
+[ext_resource type="Script" uid="uid://buionp48v1j85" path="res://camera_pivot.gd" id="3_qbcut"]
+[ext_resource type="Texture2D" uid="uid://b7bo3e0u6w0s6" path="res://Assets/OtherCharacters/Crime1/Evidence/Evidence.png" id="5_w74li"]
+[ext_resource type="Texture2D" uid="uid://fjl62l5gsle5" path="res://Assets/OtherCharacters/Crime1/Evidence/MonkeyCookie.png" id="6_0o7ae"]
+[ext_resource type="Texture2D" uid="uid://dpogxpmcw344x" path="res://Assets/OtherCharacters/Crime1/Evidence/CookieDead.png" id="7_f000n"]
+[ext_resource type="Texture2D" uid="uid://cfcsmdeuy48to" path="res://Assets/OtherCharacters/Crime1/Evidence/Knife.png" id="8_sbvff"]
+[ext_resource type="Texture2D" uid="uid://c833xxxk7c4k7" path="res://Assets/OtherCharacters/Crime1/Evidence/CrabCookie.png" id="9_y3iht"]
+[ext_resource type="Texture2D" uid="uid://yq5bm7bbhckv" path="res://Assets/OtherCharacters/Crime1/Evidence/CrabHide.png" id="10_imcmt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc3i1"]
+size = Vector2(206, 1310)
+
+[node name="Detective1" type="Node2D" unique_id=1986959289]
+script = ExtResource("1_wtn8n")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=889562762]
+z_index = -9
+texture = ExtResource("1_8dhwa")
+
+[node name="Llama" type="Sprite2D" parent="." unique_id=1135630358]
+position = Vector2(1894.9999, 455)
+scale = Vector2(0.99375, 0.99375)
+texture = ExtResource("2_qbcut")
+flip_h = true
+
+[node name="CameraPivot" type="Node2D" parent="." unique_id=1689283546]
+position = Vector2(0, -2)
+script = ExtResource("3_qbcut")
+
+[node name="Camera2D" type="Camera2D" parent="CameraPivot" unique_id=823297600]
+zoom = Vector2(0.57, 0.57)
+position_smoothing_enabled = true
+
+[node name="Right" type="Area2D" parent="CameraPivot/Camera2D" unique_id=1021229409]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraPivot/Camera2D/Right" unique_id=106197818]
+position = Vector2(1054, 0)
+shape = SubResource("RectangleShape2D_pc3i1")
+
+[node name="Left" type="Area2D" parent="CameraPivot/Camera2D" unique_id=1724531566]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraPivot/Camera2D/Left" unique_id=128949760]
+position = Vector2(-1050, 0)
+shape = SubResource("RectangleShape2D_pc3i1")
+
+[node name="EvidenceBg" type="Sprite2D" parent="CameraPivot" unique_id=1596083186]
+z_index = -1
+position = Vector2(-721, -501)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_w74li")
+
+[node name="1stEvidence" type="Sprite2D" parent="CameraPivot" unique_id=1957418821]
+visible = false
+position = Vector2(-721, -501)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_0o7ae")
+
+[node name="2ndEvidence" type="Sprite2D" parent="CameraPivot" unique_id=937191792]
+visible = false
+position = Vector2(-721, -501)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_f000n")
+
+[node name="3rdEvidence" type="Sprite2D" parent="CameraPivot" unique_id=202170136]
+visible = false
+position = Vector2(-721, -501)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_sbvff")
+
+[node name="4thEvidence" type="Sprite2D" parent="CameraPivot" unique_id=1358847256]
+visible = false
+position = Vector2(-721, -501)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_y3iht")
+
+[node name="5thEvidence" type="Sprite2D" parent="CameraPivot" unique_id=111970338]
+visible = false
+position = Vector2(-721, -501)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_imcmt")
+
+[connection signal="mouse_entered" from="CameraPivot/Camera2D/Right" to="CameraPivot" method="_on_right_mouse_entered"]
+[connection signal="mouse_entered" from="CameraPivot/Camera2D/Left" to="CameraPivot" method="_on_left_mouse_entered"]

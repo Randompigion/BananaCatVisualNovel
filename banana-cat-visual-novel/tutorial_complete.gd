@@ -3,7 +3,7 @@ var dialogue_text =  [""]
 var dialogue_speaker =  [""]
 var dialogue_sprite =  [""]
 const textboxlocation = preload("res://TextEngine.tscn")
-const wronglevellocation = preload("res://tutorial_wrong.tscn")
+const comic1location = preload("res://comic_1.tscn")
 signal start
 var textbox_exists = false
 
@@ -17,9 +17,9 @@ func _ready() -> void:
 	"thats a dumb name", "Yeah well the developer was already in a big time crunch making this so give him some slack.",
 	"Hey wait aren't we not supposed to know that???", "OH SHOOT YOU DONT KNOW WHAT KIND OF LORE ISSUES YOU CAUSED BY ACKNOLEDGING THAT",
 	"Uhh lets just go back to the script (that i technically have no knowledge of it)",
-	"Hey, narrator here again!", "Do you hear something-", "Uhh no you didn't", "Anyways I came here to tell you that this game talks about sensitive scenes such as murder, gore, insanity, depression, etc (since you are a homicide detective after all!).", "Ofcourse they are toned down and with cartoon characters, but i needed to put a warning! These scenes are really plot relevant so i couldn't censor them, some people might not want to experience those things.", "I recommend exiting here if you're uncomftable before you see anything as one will show up soon.",
+	"Hey, narrator here again!", "Do you hear something-", "Uhh no you didn't", "Anyways I came here to tell you that this game talks about things such as murder (since you are a homicide detective after all!).", "Ofcourse they are toned down and with cartoon characters (so if you are afraid of a cookie being eaten (somehow?)) but i needed to put a warning! These scenes are really plot relevant so i couldn't censor them, some people might not want to experience those things.", "To all possible chocolate chip cookies playing this who are afraid of seeing their bretheren being eaten, I recommend exiting here if you're uncomftable before you see anything as one will show up soon.",
 	"That warning (that i cannonically do not hear) sounds kinda omminous", "Anyways, we're going to be late, so lets rush there!",
-	"This shouldn't be that hard of a case!", "Its located a bit down from here, south on the map!"]
+	"This shouldn't be that hard of a case!", "Its located a bit down from here, south on the map!", "next"]
 	dialogue_speaker =  ["Police Llama", "Cat Banana", "Police Llama", "Llama (Your parter!)", "Police Llama", "Cat Banana", "Llama","Cat Banana",
 	"Llama", "Cat Banana", "Police Llame", "Narrator", "Llama","Narrator", "Narrator", "Narrator", "Narrator", "Llama", "Llama", "Cat Banana", "Llama", "Narrator"]
 	dialogue_sprite =  ["randomLlama", "catBananaCry", "randomLlama", "llama", "randomLlama", "catBanana", "llamaConfused","catBananaCry",
@@ -29,4 +29,4 @@ func _ready() -> void:
 	start.emit()
 
 func _on_textbox_finished() -> void:
-	get_tree().change_scene_to_file("res://tutorial_wrong.tscn")
+	get_tree().change_scene_to_file("res://comic_1.tscn")

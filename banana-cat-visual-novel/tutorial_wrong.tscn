@@ -8,6 +8,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_pc3i1"]
 radius = 54.91812
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc3i1"]
+size = Vector2(902, 4305)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3b47u"]
+size = Vector2(7099, 616)
+
 [node name="TutorialWrong" type="Node2D" unique_id=837563267]
 script = ExtResource("1_niae4")
 
@@ -16,8 +22,7 @@ position = Vector2(828, 532)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_yavfy")
 
-[node name="Cursor" type="Sprite2D" parent="." unique_id=1539383932]
-texture = ExtResource("2_xlmko")
+[node name="Cursor" type="CharacterBody2D" parent="." unique_id=1429577548]
 script = ExtResource("3_niae4")
 
 [node name="Camera2D" type="Camera2D" parent="Cursor" unique_id=1560475641]
@@ -36,11 +41,36 @@ color = Color(0.96368665, 0.9238385, 0.5036889, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor/Area2D" unique_id=698792655]
 shape = SubResource("CircleShape2D_pc3i1")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cursor" unique_id=1547018596]
+shape = SubResource("CircleShape2D_pc3i1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cursor" unique_id=646736051]
+texture = ExtResource("2_xlmko")
+
 [node name="RightSpot" type="Area2D" parent="." unique_id=801204249]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightSpot" unique_id=1854640035]
 position = Vector2(786, 759)
-polygon = PackedVector2Array(-408, 672, -376, 412, 98, 277, 130, 616)
+polygon = PackedVector2Array(-559, 818, -483, 483, 172, 333, 297, 550, 254, 796)
+
+[node name="KillZone" type="Area2D" parent="." unique_id=2094480910]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=970201908]
+position = Vector2(3956, 522)
+shape = SubResource("RectangleShape2D_pc3i1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillZone" unique_id=1127611198]
+position = Vector2(-2305, 522)
+shape = SubResource("RectangleShape2D_pc3i1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="KillZone" unique_id=389869487]
+position = Vector2(816.5, -1892)
+shape = SubResource("RectangleShape2D_3b47u")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="KillZone" unique_id=1687135076]
+position = Vector2(816.5, 2969)
+shape = SubResource("RectangleShape2D_3b47u")
 
 [connection signal="startcursor" from="." to="Cursor" method="_on_tutorial_wrong_startcursor"]
 [connection signal="area_entered" from="RightSpot" to="Cursor" method="_on_right_spot_area_entered"]
+[connection signal="body_entered" from="KillZone" to="Cursor" method="_on_kill_zone_body_entered"]

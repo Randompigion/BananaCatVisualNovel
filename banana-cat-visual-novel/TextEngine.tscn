@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d3283fjutfke5" path="res://Assets/CatBanana/CatBanana normal.png" id="6_qnb8h"]
 [ext_resource type="Texture2D" uid="uid://cedeg2mbq4t6c" path="res://Assets/CatBanana/CatBananaTears.png" id="7_5vnrd"]
 [ext_resource type="Texture2D" uid="uid://bw2s7imtnaowa" path="res://Assets/Jail.png" id="8_knhoa"]
+[ext_resource type="Texture2D" uid="uid://brr8hv74iqhbp" path="res://Assets/OtherCharacters/Crime1/Crab.png" id="8_ty1uv"]
 [ext_resource type="Texture2D" uid="uid://ddb8634x5tqmd" path="res://Assets/Llama/Llama2.png" id="9_5djpe"]
 [ext_resource type="Texture2D" uid="uid://q10a55pyp5bc" path="res://Assets/Llama/LlamaConfused.png" id="10_ty1uv"]
 [ext_resource type="Texture2D" uid="uid://ddii17lfwqytj" path="res://Assets/Llama/LLamaCry.png" id="11_djfok"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://6avba6rpht0a" path="res://Assets/Llama/LlamaFear2.png" id="13_es253"]
 [ext_resource type="Texture2D" uid="uid://mdrn6roh25kw" path="res://Assets/Llama/LlamaGuilt.png" id="14_06ayl"]
 [ext_resource type="Texture2D" uid="uid://dophi7v6n14lc" path="res://Assets/Llama/LlamaPoint.png" id="15_fol7t"]
+[ext_resource type="Texture2D" uid="uid://bxxsey350qlk7" path="res://Assets/OtherCharacters/Crime1/Monkey.png" id="16_ty1uv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k6fq2"]
 font_size = 24
@@ -60,6 +62,14 @@ animations = [{
 }],
 "loop": 0,
 "name": &"catBananaInsane",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ty1uv")
+}],
+"loop": 1,
+"name": &"crab",
 "speed": 5.0
 }, {
 "frames": [{
@@ -118,6 +128,14 @@ animations = [{
 "name": &"llamaPoint",
 "speed": 5.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ty1uv")
+}],
+"loop": 1,
+"name": &"monkey",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": 1,
 "name": &"null",
@@ -173,7 +191,7 @@ z_index = -2
 position = Vector2(211, -255)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_pc3i1")
-animation = &"llama"
+animation = &"monkey"
 
 [node name="Name" type="Label" parent="." unique_id=799731865]
 unique_name_in_owner = true
@@ -194,7 +212,8 @@ scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_3b47u")
 animation = &"Jail"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=138619174]
+[node name="TextCamera" type="Camera2D" parent="." unique_id=138619174]
+unique_name_in_owner = true
 position = Vector2(665, -224)
 scale = Vector2(1.2, 1.2)
 zoom = Vector2(0.84, 0.84)
