@@ -15,4 +15,4 @@ func _on_delay_timeout() -> void:
 		$%ComicSprite.frame += 1
 	else:
 		await Input.is_action_just_pressed("NextDialouge")
-		get_tree().change_scene_to_file("res://tutorial_complete.tscn")
+		get_tree().change_scene_to_file("res://detective_1.tscn")

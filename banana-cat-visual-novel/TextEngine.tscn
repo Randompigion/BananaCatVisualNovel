@@ -191,7 +191,7 @@ z_index = -2
 position = Vector2(211, -255)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_pc3i1")
-animation = &"monkey"
+animation = &"catBanana"
 
 [node name="Name" type="Label" parent="." unique_id=799731865]
 unique_name_in_owner = true

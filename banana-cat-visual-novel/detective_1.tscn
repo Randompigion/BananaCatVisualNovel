@@ -10,9 +10,40 @@
 [ext_resource type="Texture2D" uid="uid://cfcsmdeuy48to" path="res://Assets/OtherCharacters/Crime1/Evidence/Knife.png" id="8_sbvff"]
 [ext_resource type="Texture2D" uid="uid://c833xxxk7c4k7" path="res://Assets/OtherCharacters/Crime1/Evidence/CrabCookie.png" id="9_y3iht"]
 [ext_resource type="Texture2D" uid="uid://yq5bm7bbhckv" path="res://Assets/OtherCharacters/Crime1/Evidence/CrabHide.png" id="10_imcmt"]
+[ext_resource type="Script" uid="uid://cdp7yjtnevhsp" path="res://cursor.gd" id="11_f000n"]
+[ext_resource type="Texture2D" uid="uid://bqr0kpifas00d" path="res://Assets/Cursor.png" id="12_sbvff"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvxt2"]
+radius = 185.15723
+height = 889.55975
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pc3i1"]
-size = Vector2(206, 1310)
+size = Vector2(187, 1310)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pc3i1"]
+radius = 184.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3b47u"]
+radius = 187.09624
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vy0k"]
+radius = 24.0
+height = 172.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pc3i1"]
+radius = 154.0
+height = 742.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fi7k0"]
+radius = 60.0
+height = 182.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3b47u"]
+radius = 99.0
+height = 278.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3iht"]
+radius = 54.91812
 
 [node name="Detective1" type="Node2D" unique_id=1986959289]
 script = ExtResource("1_wtn8n")
@@ -26,6 +57,13 @@ position = Vector2(1894.9999, 455)
 scale = Vector2(0.99375, 0.99375)
 texture = ExtResource("2_qbcut")
 flip_h = true
+
+[node name="LlamaArea" type="Area2D" parent="Llama" unique_id=174572272]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Llama/LlamaArea" unique_id=919231233]
+position = Vector2(53.33345, 66.415085)
+shape = SubResource("CapsuleShape2D_fvxt2")
+debug_color = Color(0.7675658, 0.34839314, 0.7198526, 0.41960785)
 
 [node name="CameraPivot" type="Node2D" parent="." unique_id=1689283546]
 position = Vector2(0, -2)
@@ -44,44 +82,128 @@ shape = SubResource("RectangleShape2D_pc3i1")
 [node name="Left" type="Area2D" parent="CameraPivot/Camera2D" unique_id=1724531566]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraPivot/Camera2D/Left" unique_id=128949760]
-position = Vector2(-1050, 0)
+position = Vector2(-1059.5, 0)
 shape = SubResource("RectangleShape2D_pc3i1")
 
 [node name="EvidenceBg" type="Sprite2D" parent="CameraPivot" unique_id=1596083186]
-z_index = -1
+unique_name_in_owner = true
+z_index = -4
 position = Vector2(-721, -501)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_w74li")
 
-[node name="1stEvidence" type="Sprite2D" parent="CameraPivot" unique_id=1957418821]
+[node name="MonkeyChocolate" type="Sprite2D" parent="CameraPivot" unique_id=1957418821]
+unique_name_in_owner = true
 visible = false
 position = Vector2(-721, -501)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_0o7ae")
 
-[node name="2ndEvidence" type="Sprite2D" parent="CameraPivot" unique_id=937191792]
+[node name="CookieDead" type="Sprite2D" parent="CameraPivot" unique_id=937191792]
+unique_name_in_owner = true
 visible = false
 position = Vector2(-721, -501)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_f000n")
 
-[node name="3rdEvidence" type="Sprite2D" parent="CameraPivot" unique_id=202170136]
+[node name="Knife" type="Sprite2D" parent="CameraPivot" unique_id=202170136]
+unique_name_in_owner = true
 visible = false
 position = Vector2(-721, -501)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_sbvff")
 
-[node name="4thEvidence" type="Sprite2D" parent="CameraPivot" unique_id=1358847256]
+[node name="CrabChocolate" type="Sprite2D" parent="CameraPivot" unique_id=1358847256]
+unique_name_in_owner = true
 visible = false
 position = Vector2(-721, -501)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("9_y3iht")
 
-[node name="5thEvidence" type="Sprite2D" parent="CameraPivot" unique_id=111970338]
+[node name="HiddenCookie" type="Sprite2D" parent="CameraPivot" unique_id=111970338]
+unique_name_in_owner = true
 visible = false
 position = Vector2(-721, -501)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_imcmt")
 
+[node name="MonkeyArea" type="Area2D" parent="." unique_id=1046422895]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MonkeyArea" unique_id=46795211]
+position = Vector2(-691, 40)
+shape = SubResource("CircleShape2D_pc3i1")
+debug_color = Color(0.81396514, 0.17433596, 0.4238246, 0.41960785)
+
+[node name="CookieCorpseArea" type="Area2D" parent="." unique_id=1159559961]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CookieCorpseArea" unique_id=1518839229]
+position = Vector2(-1454, -12)
+shape = SubResource("CircleShape2D_3b47u")
+debug_color = Color(0.73103726, 0.4731201, 3.85046e-07, 0.41960785)
+
+[node name="KnifeArea" type="Area2D" parent="." unique_id=2085424281]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KnifeArea" unique_id=2020036774]
+position = Vector2(-261, 230)
+shape = SubResource("CapsuleShape2D_4vy0k")
+debug_color = Color(0.42175734, 0.49449635, 0.90578383, 0.41960785)
+
+[node name="CrabCollision" type="Area2D" parent="." unique_id=899785030]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrabCollision" unique_id=451576538]
+position = Vector2(1168, -104)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_pc3i1")
+debug_color = Color(0.2683164, 0.6168517, 0.4157726, 0.41960785)
+
+[node name="HiddenCookie" type="Area2D" parent="." unique_id=832357993]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HiddenCookie" unique_id=1040636274]
+position = Vector2(1342, -323)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_fi7k0")
+debug_color = Color(0.8731561, 0.3083234, 0.42428172, 0.41960785)
+
+[node name="Door" type="Area2D" parent="." unique_id=411726519]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=325604623]
+position = Vector2(508, 546)
+rotation = 1.7961513
+shape = SubResource("CapsuleShape2D_3b47u")
+debug_color = Color(0.7622996, 0.43480512, 0.33452156, 0.41960785)
+
+[node name="Cursor" type="CharacterBody2D" parent="." unique_id=59184441]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+script = ExtResource("11_f000n")
+
+[node name="Area2D" type="Area2D" parent="Cursor" unique_id=898223058]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor/Area2D" unique_id=2121488918]
+shape = SubResource("CircleShape2D_y3iht")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cursor" unique_id=1440343398]
+shape = SubResource("CircleShape2D_y3iht")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cursor" unique_id=2068583131]
+z_index = 9
+texture = ExtResource("12_sbvff")
+
+[connection signal="StartDetective" from="." to="Cursor" method="_on_detective_1_start_detective"]
+[connection signal="mouse_entered" from="Llama/LlamaArea" to="Cursor" method="_on_llama_area_mouse_entered"]
 [connection signal="mouse_entered" from="CameraPivot/Camera2D/Right" to="CameraPivot" method="_on_right_mouse_entered"]
 [connection signal="mouse_entered" from="CameraPivot/Camera2D/Left" to="CameraPivot" method="_on_left_mouse_entered"]
+[connection signal="mouse_entered" from="MonkeyArea" to="Cursor" method="_on_monkey_area_mouse_entered"]
+[connection signal="mouse_entered" from="CookieCorpseArea" to="Cursor" method="_on_cookie_corpse_mouse_entered"]
+[connection signal="mouse_entered" from="KnifeArea" to="Cursor" method="_on_knife_area_mouse_entered"]
+[connection signal="mouse_entered" from="CrabCollision" to="Cursor" method="_on_crab_collision_mouse_entered"]
+[connection signal="mouse_entered" from="HiddenCookie" to="Cursor" method="_on_hidden_cookie_mouse_entered"]
+[connection signal="mouse_entered" from="Door" to="Cursor" method="_on_door_mouse_entered"]
+[connection signal="cookieCorpseDialouge" from="Cursor" to="." method="_on_cursor_cookie_corpse_dialouge"]
+[connection signal="crabDialouge" from="Cursor" to="." method="_on_cursor_crab_dialouge"]
+[connection signal="door" from="Cursor" to="." method="_on_cursor_door"]
+[connection signal="hiddenBody" from="Cursor" to="." method="_on_cursor_hidden_body"]
+[connection signal="knifeDialouge" from="Cursor" to="." method="_on_cursor_knife_dialouge"]
+[connection signal="llama" from="Cursor" to="." method="_on_cursor_llama"]
+[connection signal="monkeydialouge" from="Cursor" to="." method="_on_cursor_monkeydialouge"]

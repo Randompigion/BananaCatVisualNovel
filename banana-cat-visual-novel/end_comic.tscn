@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dtkxcykgy87v8"]
+
+[ext_resource type="Script" uid="uid://btenub12nj06k" path="res://end_comic.gd" id="1_u0sb7"]
+[ext_resource type="Texture2D" uid="uid://emwwtcdm7m0b" path="res://Assets/Comics/Finish Trial1/1.png" id="2_qqw38"]
+[ext_resource type="Texture2D" uid="uid://dwpu84bdymh3c" path="res://Assets/Comics/Finish Trial1/2.png" id="3_xn07n"]
+[ext_resource type="Texture2D" uid="uid://c8l7fcw2fmgvo" path="res://Assets/Comics/Finish Trial1/3.png" id="4_62m5y"]
+[ext_resource type="Texture2D" uid="uid://cq5wv3xwlot7k" path="res://Assets/Comics/Finish Trial1/3.5.png" id="4_qqw38"]
+[ext_resource type="Texture2D" uid="uid://b1mmrl8i7xvhn" path="res://Assets/Comics/Finish Trial1/4.png" id="5_2cjw2"]
+[ext_resource type="Texture2D" uid="uid://y3mjjitudtar" path="res://Assets/Comics/Finish Trial1/5.png" id="6_47b61"]
+[ext_resource type="Texture2D" uid="uid://x7n2ecgxv4y5" path="res://Assets/Comics/Finish Trial1/6.png" id="7_de2tp"]
+[ext_resource type="Texture2D" uid="uid://b1bi7hdrf026j" path="res://Assets/Comics/Finish Trial1/End.png" id="8_qqw38"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1swmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qqw38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xn07n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qqw38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_62m5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2cjw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_47b61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_de2tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qqw38")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y13p4"]
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[node name="EndComic" type="Node2D" unique_id=364671978]
+script = ExtResource("1_u0sb7")
+
+[node name="ComicSprite" type="AnimatedSprite2D" parent="." unique_id=1553346512]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_1swmv")
+frame_progress = 0.3615133
+
+[node name="Delay" type="Timer" parent="." unique_id=930004647]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 0.2
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1951326653]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="." unique_id=1991499251]
+offset_left = 785.0
+offset_top = 709.0
+offset_right = 1254.0
+offset_bottom = 774.0
+text = "Click or Press E to continue"
+label_settings = SubResource("LabelSettings_y13p4")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]
